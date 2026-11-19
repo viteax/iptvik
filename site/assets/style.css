@@ -142,6 +142,23 @@ p { margin: 0 0 1em; }
 .career .when { display: block; font-size: 0.8em; color: var(--text-2); }
 .career .what { display: block; font-size: 0.9em; color: var(--text-2); }
 
+/* ---------- Заметки ---------- */
+.date { display: block; font-size: 0.8em; color: var(--text-2); margin-bottom: 2em; }
+
+.note h1 { font-size: 2.2em; }
+@media (max-width: 767px) { .note h1 { font-size: 1.8em; } }
+.note h2 { font-size: 1.1em; margin-top: 2em; }
+.note ul { padding-left: 1.2em; margin: 0 0 1em; }
+.note li { margin-bottom: 0.4em; }
+
+code {
+  font-family: "SF Mono", Consolas, "Liberation Mono", monospace;
+  font-size: 0.8em;
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  background: var(--card);
+}
+
 footer {
   margin-top: 4rem;
   padding-top: 1.5rem;
