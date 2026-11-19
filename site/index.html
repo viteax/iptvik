@@ -3,62 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Виктор Иптышев</title>
-  <meta name="description" content="Виктор Иптышев – бэкенд-разработчик, студент ТУСУР.">
+  <title>Виктор Иптышев – бэкенд-разработчик</title>
+  <meta name="description" content="Виктор Иптышев – бэкенд-разработчик, бывший стажер Яндекс Финтеха, студент ТУСУР. Карьера, проекты и достижения в спортивном программировании.">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Виктор Иптышев – бэкенд-разработчик">
+  <meta property="og:description" content="Бэкенд-разработчик, бывший стажер Яндекс Финтеха, студент ТУСУР.">
+  <meta property="og:url" content="https://iptvik.ru/">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="canonical" href="https://iptvik.ru/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
   <link rel="stylesheet" href="/assets/style.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Виктор Иптышев",
+      "url": "https://iptvik.ru/",
+      "jobTitle": "Бэкенд-разработчик",
+      "alumniOf": [
+        { "@type": "Organization", "name": "Яндекс Финтех" },
+        { "@type": "HighSchool", "name": "Государственный лицей Республики Тыва" }
+      ],
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "ТУСУР" },
+      "sameAs": ["https://github.com/viteax", "https://codeforces.com/profile/VitCore"]
+    }
+  </script>
 </head>
 <body>
-  <main class="page">
-    <a class="home-link" href="/">Виктор Иптышев</a>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="/">iptvik.ru</a>
+      <nav aria-label="Основная навигация">
+        <ul class="nav-links">
+          <li><a href="/" class="active">Обо мне</a></li>
+          <li><a href="#career">Карьера</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="/achievements/">Достижения</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <p>
-      Я бэкенд-разработчик и студент четвертого курса ТУСУР. Пишу сервисы на Python,
-      а больше всего люблю автоматизировать рутину так, чтобы о ней можно было забыть.
-    </p>
-    <p>
-      В 2024 году вошел в топ-200 Тренировок по алгоритмам Яндекса и благодаря этому
-      попал на стажировку в Яндекс Финтех: делал платформу тестирования
-      POS-терминалов компании – сервис на Django и HTMX, который запускает прогоны
-      через асинхронные запросы к микросервисам на Go.
-    </p>
-    <p>
-      В своих проектах автоматизирую университет от начала до конца: от тестирования
-      компетенций по профстандартам до <a href="https://vk.ru/bez_zamechaniy">бота</a>,
-      который превращает неряшливый .docx в работу по стандарту с предпросмотром PDF.
-    </p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Томск · ТУСУР</div>
+        <h1>Виктор Иптышев</h1>
+        <p class="lead">
+          Бэкенд-разработчик и студент четвертого курса ТУСУР. Бывший стажер Яндекс Финтеха,
+          спортивный программист. Пишу сервисы на Python и автоматизирую рутину так,
+          чтобы о ней можно было забыть.
+        </p>
+        <div class="hero-links">
+          <a class="btn primary" href="/achievements/">Достижения <span class="arrow">→</span></a>
+          <a class="btn" href="https://github.com/viteax">GitHub <span class="arrow">↗</span></a>
+          <a class="btn" href="https://codeforces.com/profile/VitCore">Codeforces <span class="arrow">↗</span></a>
+        </div>
 
-    <h2>Достижения</h2>
-    <ul class="links">
-      <li><a href="/achievements/#ten-of-ten-2026">Тренировки на 10 из 10 от Яндекса: топ-300, 8 из 8 задач</a> <span class="note">(2026)</span></li>
-      <li><a href="/achievements/#true-tech-2025">Полуфинал True Tech Champ от МТС, алгоритмический трек</a> <span class="note">(2025)</span></li>
-      <li><a href="/achievements/#yandex-fintech-2024">Стажировка в Яндекс Финтехе</a> <span class="note">(2024)</span></li>
-      <li><a href="/achievements/#hackit-2024">Номинация «За волю к победе» на олимпиаде ХакИТ в ТПУ</a> <span class="note">(2024)</span></li>
-      <li><a href="/achievements/#algorithms-5-2024">Тренировки по алгоритмам 5.0 от Яндекса: топ-200, 39 из 40 задач</a> <span class="note">(2024)</span></li>
-      <li><a href="/achievements/#tyva-champion-2023">Победа в Чемпионате Республики Тыва по спортивному программированию</a> <span class="note">(2023)</span></li>
-      <li><a href="/achievements/">Все значки</a></li>
-    </ul>
+        <div class="facts">
+          <div class="fact"><div class="fact-label">Роль</div><div class="fact-value">Бэкенд-разработчик</div></div>
+          <div class="fact"><div class="fact-label">Опыт</div><div class="fact-value">Яндекс Финтех <small>2024</small></div></div>
+          <div class="fact"><div class="fact-label">Учеба</div><div class="fact-value">ТУСУР, 4 курс</div></div>
+          <div class="fact"><div class="fact-label">Codeforces</div><div class="fact-value">1271 <small>макс. 1274</small></div></div>
+        </div>
+      </div>
+    </section>
 
-    <h2>Проекты</h2>
-    <ul class="links">
-      <li><a href="https://sok.iptvik.ru">Оценка компетенций</a> <span class="note">(FastAPI, PostgreSQL)</span></li>
-      <li><a href="https://vk.ru/bez_zamechaniy">Оформлятор</a> <span class="note">(бот ВКонтакте)</span></li>
-      <li><a href="https://github.com/viteax/stepik-report-creator">Отчеты по Stepik</a> <span class="note">(Python, python-docx)</span></li>
-      <li><a href="https://github.com/viteax/edu-dash">Учебный кабинет</a> <span class="note">(Django REST, React)</span></li>
-      <li><a href="https://github.com/viteax/pr-reviewers-service">Назначение ревьюеров</a> <span class="note">(FastAPI)</span></li>
-      <li><a href="https://github.com/viteax/board_game">Игра на STM32</a> <span class="note">(C, I2C, SPI)</span></li>
-    </ul>
+    <section class="section container">
+      <h2>Обо мне</h2>
+      <div class="prose">
+        <p>
+          В спортивное программирование пришел еще в лицее: в 2023 году выиграл первый
+          Чемпионат Республики Тыва по спортивному программированию. Весной 2024-го вошел
+          в топ-200 Тренировок по алгоритмам Яндекса – и этот результат привел меня на
+          стажировку в Яндекс Финтех.
+        </p>
+        <p>
+          В своих проектах автоматизирую университет от начала до конца: от тестирования
+          компетенций по профстандартам до <a href="https://vk.ru/bez_zamechaniy">бота</a>,
+          который превращает неряшливый .docx в работу по стандарту с предпросмотром PDF.
+          Ботом каждый день пользуются около десяти человек – без всякого продвижения.
+        </p>
+      </div>
+    </section>
 
-    <h2>Ссылки</h2>
-    <ul class="links">
-      <li><a href="https://github.com/viteax">GitHub</a></li>
-      <li><a href="https://codeforces.com/profile/VitCore">Codeforces</a> <span class="note">(рейтинг 1271)</span></li>
-    </ul>
+    <section class="section container" id="career">
+      <h2>Карьера</h2>
+      <ul class="timeline">
+        <li class="current">
+          <div class="timeline-date">2023 – сейчас</div>
+          <div class="timeline-title">Студент <span class="org">· ТУСУР, Томск</span></div>
+          <div class="timeline-desc">Четвертый курс. Параллельно держу свои сервисы на собственном сервере: сайты, боты, мониторинг, CI.</div>
+        </li>
+        <li>
+          <div class="timeline-date">сен – ноя 2024</div>
+          <div class="timeline-title">Стажер-разработчик <span class="org">· Яндекс Финтех, группа разработки эквайринга</span></div>
+          <div class="timeline-desc">
+            Платформа тестирования POS-терминалов компании: сервис на Django и HTMX, который
+            запускает тестовые прогоны через асинхронные запросы к микросервисам на Go.
+            С октября – на неполный день, вместе с учебой.
+          </div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">HTMX</span><span class="chip">Go</span></div>
+        </li>
+        <li>
+          <div class="timeline-date">июл – авг 2024</div>
+          <div class="timeline-title">Стажер-разработчик <span class="org">· Яндекс Финтех, группа инструментов роутинга платежей</span></div>
+          <div class="timeline-desc">Начало стажировки – попал на нее по результатам Тренировок по алгоритмам 5.0.</div>
+        </li>
+        <li>
+          <div class="timeline-date">до 2023</div>
+          <div class="timeline-title">Ученик <span class="org">· Государственный лицей Республики Тыва</span></div>
+          <div class="timeline-desc">Победитель первого Чемпионата Республики Тыва по спортивному программированию.</div>
+        </li>
+      </ul>
+    </section>
 
-    <footer>iptvik.ru</footer>
+    <section class="section container" id="achievements">
+      <h2>Достижения <a class="more" href="/achievements/">все значки →</a></h2>
+      <div class="badge-strip">
+        <a href="/achievements/#ten-of-ten-2026"><img src="/assets/10-of-10.svg" alt="" width="56" height="56">Тренировки на 10 из 10: топ-300<span class="year">2026</span></a>
+        <a href="/achievements/#true-tech-2025"><img src="/assets/true-tech-2025.svg" alt="" width="56" height="56">Полуфинал True Tech Champ<span class="year">2025</span></a>
+        <a href="/achievements/#yandex-fintech-2024"><img src="/assets/yandex-fintech.png" alt="" width="56" height="56">Стажер Яндекс Финтеха<span class="year">2024</span></a>
+        <a href="/achievements/#hackit-2024"><img src="/assets/hackit-2024.svg" alt="" width="56" height="56">«За волю к победе» на ХакИТ<span class="year">2024</span></a>
+        <a href="/achievements/#algorithms-5-2024"><img src="/assets/algorithms-5.svg" alt="" width="56" height="56">Тренировки по алгоритмам 5.0: топ-200<span class="year">2024</span></a>
+        <a href="/achievements/#tyva-champion-2023"><img src="/assets/tyva-2023.svg" alt="" width="56" height="56">Чемпион Республики Тыва<span class="year">2023</span></a>
+      </div>
+    </section>
+
+    <section class="section container" id="projects">
+      <h2>Проекты</h2>
+      <div class="cards">
+        <a class="card" href="https://sok.iptvik.ru">
+          <h3>Оценка компетенций</h3>
+          <p>Тестирует студентов по компетенциям ФГОС и связывает результаты с трудовыми функциями профстандарта.</p>
+          <div class="chips"><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span></div>
+        </a>
+        <a class="card" href="https://vk.ru/bez_zamechaniy">
+          <h3>Оформлятор</h3>
+          <p>Бот ВКонтакте: превращает .docx в работу по стандарту ТУСУР с предпросмотром PDF.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">python-docx</span></div>
+        </a>
+        <a class="card" href="https://github.com/viteax/stepik-report-creator">
+          <h3>Отчеты по Stepik</h3>
+          <p>Одна команда – и курс Stepik превращается в Word-отчет с условиями и решениями.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Pydantic</span><span class="chip">Pytest</span></div>
+        </a>
+        <a class="card" href="https://github.com/viteax/edu-dash">
+          <h3>Учебный кабинет</h3>
+          <p>Кабинет для студентов, преподавателей и родителей.</p>
+          <div class="chips"><span class="chip">Django REST</span><span class="chip">Celery</span><span class="chip">React</span></div>
+        </a>
+        <a class="card" href="https://github.com/viteax/pr-reviewers-service">
+          <h3>Назначение ревьюеров</h3>
+          <p>Сервис сам назначает ревьюеров на пул-реквесты и управляет командами.</p>
+          <div class="chips"><span class="chip">FastAPI</span><span class="chip">Pytest</span></div>
+        </a>
+        <a class="card" href="https://github.com/viteax/board_game">
+          <h3>Игра на STM32</h3>
+          <p>Наклоняешь плату – шарик катится по светодиодной матрице и собирает еду.</p>
+          <div class="chips"><span class="chip">C</span><span class="chip">I2C</span><span class="chip">SPI</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Ссылки</h2>
+      <ul class="data-list">
+        <li><span class="label">GitHub</span><span class="data-value"><a href="https://github.com/viteax">github.com/viteax</a></span></li>
+        <li><span class="label">Codeforces</span><span class="data-value"><a href="https://codeforces.com/profile/VitCore">VitCore</a> <span class="note">· рейтинг 1271</span></span></li>
+        <li><span class="label">ВКонтакте</span><span class="data-value"><a href="https://vk.ru/bez_zamechaniy">Оформлятор</a> <span class="note">· бот</span></span></li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© Виктор Иптышев</span>
+      <span>Обновлено в ноябре 2026</span>
+    </div>
+  </footer>
+
+  <script src="/assets/topo.js" defer></script>
 </body>
 </html>

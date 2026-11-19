@@ -4,20 +4,41 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Достижения – Виктор Иптышев</title>
-  <meta name="description" content="Достижения Виктора Иптышева.">
+  <meta name="description" content="Достижения Виктора Иптышева: спортивное программирование, тренировки Яндекса, стажировка в Яндекс Финтехе.">
+  <meta property="og:title" content="Достижения – Виктор Иптышев">
+  <meta property="og:url" content="https://iptvik.ru/achievements/">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="canonical" href="https://iptvik.ru/achievements/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
-  <main class="page">
-    <a class="home-link" href="/">Виктор Иптышев</a>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="/">iptvik.ru</a>
+      <nav aria-label="Основная навигация">
+        <ul class="nav-links">
+          <li><a href="/">Обо мне</a></li>
+          <li><a href="/#career">Карьера</a></li>
+          <li><a href="/#projects">Проекты</a></li>
+          <li><a href="/achievements/" class="active">Достижения</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <h1>Достижения</h1>
-    <p class="muted">Значки за то, что уже случилось. Нажмите на значок, чтобы открыть его.</p>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Достижения</h1>
+        <p>Значки за то, что уже случилось: олимпиады, чемпионаты, тренировки Яндекса и стажировка, к которой они привели.</p>
+      </div>
+    </section>
 
+    <section class="section container">
     <!--
       Новое достижение: скопировать <li> и <template> ниже, поменять id, картинку и текст.
       Картинка – в /assets, квадратная или с монетой сверху (обрезается по верхнему краю).
@@ -66,6 +87,8 @@
         </button>
       </li>
     </ul>
+    <p class="hint">Нажмите на значок, чтобы открыть карточку.</p>
+    </section>
 
     <template id="ten-of-ten-2026">
       <span class="medal"><img src="/assets/10-of-10.svg" alt="Значок «Тренировки на 10 из 10»" width="96" height="96"></span>
@@ -93,10 +116,14 @@
     <template id="yandex-fintech-2024">
       <span class="medal"><img src="/assets/yandex-fintech.png" alt="Монета Яндекс Финтеха" width="96" height="119"></span>
       <h3>Стажер Яндекс Финтеха</h3>
-      <div class="unlocked">Получено в 2024 году</div>
+      <div class="unlocked">Июль – ноябрь 2024 года</div>
       <p>
-        Стажировка в Яндекс Финтехе. Попал на нее благодаря результату на
+        Стажер-разработчик в Яндекс Финтехе. Попал на стажировку благодаря результату на
         <a href="#algorithms-5-2024" data-open="algorithms-5-2024">Тренировках по алгоритмам 5.0</a>.
+        Начинал в группе разработки инструментов роутинга платежей, с сентября – в группе
+        разработки эквайринга; с октября совмещал работу с учебой.
+      </p>
+      <p>
         Сделал платформу тестирования POS-терминалов компании: сервис на Django и HTMX,
         который запускает тестовые прогоны через асинхронные запросы к микросервисам на Go.
       </p>
@@ -139,8 +166,14 @@
       <p><a href="https://itsport.rtyva.ru/">Итоги на сайте чемпионата</a></p>
     </template>
 
-    <footer><a href="/">← На главную</a></footer>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <a href="/">← На главную</a>
+      <span>Обновлено в ноябре 2026</span>
+    </div>
+  </footer>
 
   <dialog id="card" aria-labelledby="card-title">
     <button class="close" type="button" aria-label="Закрыть">×</button>
@@ -183,5 +216,6 @@
     // Прямая ссылка на значок: /achievements/#yandex-fintech-2024
     if (location.hash) openBadge(location.hash.slice(1));
   </script>
+  <script src="/assets/topo.js" defer></script>
 </body>
 </html>
