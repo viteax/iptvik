@@ -24,6 +24,13 @@
     -->
     <ul class="badges">
       <li>
+        <button class="badge" type="button" data-open="ten-of-ten-2026">
+          <span class="medal"><img src="/assets/10-of-10.svg" alt="" width="96" height="96"></span>
+          <span class="badge-title">Тренировки на 10 из 10: топ-300</span>
+          <span class="tier">2026</span>
+        </button>
+      </li>
+      <li>
         <button class="badge" type="button" data-open="yandex-fintech-2024">
           <span class="medal"><img src="/assets/yandex-fintech.png" alt="" width="96" height="119"></span>
           <span class="badge-title">Стажер Яндекс Финтеха</span>
@@ -38,6 +45,13 @@
         </button>
       </li>
       <li>
+        <button class="badge" type="button" data-open="algorithms-5-2024">
+          <span class="medal"><img src="/assets/algorithms-5.svg" alt="" width="96" height="96"></span>
+          <span class="badge-title">Тренировки по алгоритмам 5.0: топ-200</span>
+          <span class="tier">2024</span>
+        </button>
+      </li>
+      <li>
         <button class="badge" type="button" data-open="tyva-champion-2023">
           <span class="medal"><img src="/assets/tyva-2023.svg" alt="" width="96" height="96"></span>
           <span class="badge-title">Чемпион Тывы по спортивному программированию</span>
@@ -46,15 +60,41 @@
       </li>
     </ul>
 
+    <template id="ten-of-ten-2026">
+      <span class="medal"><img src="/assets/10-of-10.svg" alt="Значок «Тренировки на 10 из 10»" width="96" height="96"></span>
+      <h3>Тренировки на 10 из 10: топ-300</h3>
+      <div class="unlocked">Получено в 2026 году</div>
+      <p>
+        Юбилейный, десятый сезон тренировок Яндекса по алгоритмам – курс теоретической
+        и практической подготовки. Решил все 8 соревновательных задач из 8 и вошел
+        в топ-300 участников.
+      </p>
+      <p><a href="/assets/certs/10-of-10.pdf">Сертификат № 100064 (PDF)</a></p>
+    </template>
+
     <template id="yandex-fintech-2024">
       <span class="medal"><img src="/assets/yandex-fintech.png" alt="Монета Яндекс Финтеха" width="96" height="119"></span>
       <h3>Стажер Яндекс Финтеха</h3>
       <div class="unlocked">Получено в 2024 году</div>
       <p>
-        Стажировка в Яндекс Финтехе. Сделал платформу тестирования POS-терминалов компании:
-        сервис на Django и HTMX, который запускает тестовые прогоны через асинхронные запросы
-        к микросервисам на Go.
+        Стажировка в Яндекс Финтехе. Попал на нее благодаря результату на
+        <a href="#algorithms-5-2024" data-open="algorithms-5-2024">Тренировках по алгоритмам 5.0</a>.
+        Сделал платформу тестирования POS-терминалов компании: сервис на Django и HTMX,
+        который запускает тестовые прогоны через асинхронные запросы к микросервисам на Go.
       </p>
+    </template>
+
+    <template id="algorithms-5-2024">
+      <span class="medal"><img src="/assets/algorithms-5.svg" alt="Значок «Тренировки по алгоритмам 5.0»" width="96" height="96"></span>
+      <h3>Тренировки по алгоритмам 5.0: топ-200</h3>
+      <div class="unlocked">Получено весной 2024 года</div>
+      <p>
+        Пятый сезон тренировок Яндекса по алгоритмам (март – апрель 2024): курс теоретической
+        и практической подготовки. Решил 39 задач из 40 и вошел в топ-200 участников.
+        Этот результат привел меня на
+        <a href="#yandex-fintech-2024" data-open="yandex-fintech-2024">стажировку в Яндекс Финтех</a>.
+      </p>
+      <p><a href="/assets/certs/algorithms-5.0.pdf">Сертификат № 500132 (PDF)</a></p>
     </template>
 
     <template id="hackit-2024">
@@ -98,9 +138,17 @@
       if (!tpl) return;
       body.replaceChildren(tpl.content.cloneNode(true));
       body.querySelector("h3").id = "card-title";
-      dialog.showModal();
+      if (!dialog.open) dialog.showModal();
       history.replaceState(null, "", "#" + id);
     }
+
+    // Ссылки между карточками: переключают карточку, не закрывая окно.
+    body.addEventListener("click", (e) => {
+      const link = e.target.closest("[data-open]");
+      if (!link) return;
+      e.preventDefault();
+      openBadge(link.dataset.open);
+    });
 
     document.querySelectorAll("[data-open]").forEach((btn) =>
       btn.addEventListener("click", () => openBadge(btn.dataset.open))
