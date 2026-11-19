@@ -13,8 +13,13 @@
 		X-Content-Type-Options nosniff
 		Referrer-Policy strict-origin-when-cross-origin
 	}
-	header /assets/* Cache-Control "public, max-age=3600"
-	# Шрифты не меняются: имя файла сменится вместе с содержимым.
+	# Шрифты не меняются: имя файла сменится вместе с содержимым. Остальные ассеты – на час.
+	# Матчеры не пересекаются: Caddy сортирует header по пути, и /assets/* перезаписал бы шрифты.
+	@assets {
+		path /assets/*
+		not path /assets/fonts/*
+	}
+	header @assets Cache-Control "public, max-age=3600"
 	header /assets/fonts/* Cache-Control "public, max-age=31536000, immutable"
 	handle_errors {
 		@404 expression {err.status_code} == 404
