@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Достижения – Виктор Иптышев</title>
+  <meta name="description" content="Достижения Виктора Иптышева.">
+  <link rel="icon" href="/assets/yandex-fintech.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <main class="page">
+    <a class="home-link" href="/">Виктор Иптышев</a>
+
+    <h1>Достижения</h1>
+    <p class="muted">Значки за то, что уже случилось. Нажмите на значок, чтобы открыть его.</p>
+
+    <!--
+      Новое достижение: скопировать <li> и <template> ниже, поменять id, картинку и текст.
+      Картинка – в /assets, квадратная или с монетой сверху (обрезается по верхнему краю).
+    -->
+    <ul class="badges">
+      <li>
+        <button class="badge" type="button" data-open="yandex-fintech-2024">
+          <span class="medal"><img src="/assets/yandex-fintech.png" alt="" width="96" height="119"></span>
+          <span class="badge-title">Стажер Яндекс Финтеха</span>
+          <span class="tier">2024</span>
+        </button>
+      </li>
+    </ul>
+
+    <template id="yandex-fintech-2024">
+      <span class="medal"><img src="/assets/yandex-fintech.png" alt="Монета Яндекс Финтеха" width="96" height="119"></span>
+      <h3>Стажер Яндекс Финтеха</h3>
+      <div class="unlocked">Получено в 2024 году</div>
+      <p>
+        Стажировка в Яндекс Финтехе. Сделал платформу тестирования POS-терминалов компании:
+        сервис на Django и HTMX, который запускает тестовые прогоны через асинхронные запросы
+        к микросервисам на Go.
+      </p>
+    </template>
+
+    <footer><a href="/">← На главную</a></footer>
+  </main>
+
+  <dialog id="card" aria-labelledby="card-title">
+    <button class="close" type="button" aria-label="Закрыть">×</button>
+    <div class="body"></div>
+  </dialog>
+
+  <script>
+    const dialog = document.getElementById("card");
+    const body = dialog.querySelector(".body");
+
+    function openBadge(id) {
+      const tpl = document.getElementById(id);
+      if (!tpl) return;
+      body.replaceChildren(tpl.content.cloneNode(true));
+      body.querySelector("h3").id = "card-title";
+      dialog.showModal();
+      history.replaceState(null, "", "#" + id);
+    }
+
+    document.querySelectorAll("[data-open]").forEach((btn) =>
+      btn.addEventListener("click", () => openBadge(btn.dataset.open))
+    );
+    dialog.querySelector(".close").addEventListener("click", () => dialog.close());
+    // Клик по фону закрывает карточку.
+    dialog.addEventListener("click", (e) => {
+      const r = dialog.getBoundingClientRect();
+      const inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) dialog.close();
+    });
+    dialog.addEventListener("close", () => history.replaceState(null, "", location.pathname));
+
+    // Прямая ссылка на значок: /achievements/#yandex-fintech-2024
+    if (location.hash) openBadge(location.hash.slice(1));
+  </script>
+</body>
+</html>

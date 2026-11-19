@@ -1,0 +1,255 @@
+/* Палитра и типографика – по мотивам darioamodei.com: слоновая кость, графит, текстовая антиква. */
+:root {
+  --ivory-light: #faf9f5;
+  --ivory-medium: #f0eee6;
+  --ivory-dark: #e8e6dc;
+  --cloud-light: #d1cfc5;
+  --cloud-medium: #b0aea5;
+  --cloud-dark: #87867f;
+  --slate-light: #5e5d59;
+  --slate-medium: #3d3d3a;
+  --slate-dark: #1f1e1d;
+
+  --bg: var(--ivory-light);
+  --text: var(--slate-dark);
+  --text-2: var(--slate-light);
+  --border: var(--ivory-dark);
+  --card: var(--ivory-medium);
+
+  --font: "Literata", georgia, serif;
+  --narrow: 38.75rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--slate-dark);
+    --text: var(--ivory-medium);
+    --text-2: var(--cloud-medium);
+    --border: var(--slate-medium);
+    --card: #2a2927;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  text-wrap: pretty;
+}
+
+.page {
+  width: min(var(--narrow), calc(100% - 32px));
+  margin: 0 auto;
+  padding: 6rem 0 5rem;
+}
+
+@media (max-width: 767px) {
+  body { font-size: 1.125rem; }
+  .page { padding: 3rem 0 4rem; }
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color 0.2s;
+}
+a:hover { color: var(--text-2); }
+
+.home-link {
+  display: inline-block;
+  font-size: 1.6em;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  margin-bottom: 1.2em;
+}
+
+h1 {
+  font-size: 3.1em;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 0.4em;
+  text-wrap: balance;
+}
+@media (max-width: 767px) { h1 { font-size: 2.4em; } }
+
+h2 {
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 2.4em 0 0.7em;
+}
+
+p { margin: 0 0 1em; }
+
+.muted { color: var(--text-2); }
+
+/* Списки ссылок, как разделы на главной у Дарио: точка, ссылка, приглушенная пометка. */
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+.links li { padding-left: 1em; }
+.links li::before {
+  content: "•";
+  display: inline-block;
+  margin-left: -0.7em;
+  margin-right: 0.3em;
+}
+.links .note { color: var(--text-2); }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8em;
+  color: var(--text-2);
+}
+
+/* ---------- Достижения: значки в духе GitHub Achievements ---------- */
+
+.badges {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10.5rem, 1fr));
+  gap: 2rem 1.5rem;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.medal {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 35%, var(--bg) 0 55%, var(--card) 100%);
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 10px 24px -12px rgb(0 0 0 / 0.35);
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s;
+  overflow: hidden;
+}
+
+.medal img {
+  width: 5.75rem;
+  height: 5.75rem;
+  object-fit: cover;
+  object-position: top;
+  filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.18));
+}
+
+/* Блик, который проходит по значку при наведении. */
+.medal::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: linear-gradient(115deg, transparent 40%, rgb(255 255 255 / 0.55) 50%, transparent 60%);
+  transform: translateX(-60%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+
+.badge:hover .medal,
+.badge:focus-visible .medal {
+  transform: translateY(-4px) rotate(-4deg) scale(1.04);
+  box-shadow:
+    0 0 0 1px var(--cloud-light),
+    0 18px 30px -14px rgb(0 0 0 / 0.45);
+}
+.badge:hover .medal::after,
+.badge:focus-visible .medal::after { transform: translateX(60%); }
+.badge:focus-visible { outline: none; }
+.badge:focus-visible .medal { outline: 2px solid var(--text-2); outline-offset: 4px; }
+
+.badge-title {
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Плашка уровня, как «x2» у GitHub. */
+.tier {
+  font-size: 0.65em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.15em 0.65em;
+  border-radius: 999px;
+  background: var(--slate-dark);
+  color: var(--ivory-light);
+}
+@media (prefers-color-scheme: dark) {
+  .tier { background: var(--ivory-medium); color: var(--slate-dark); }
+}
+
+/* Карточка достижения */
+dialog {
+  width: min(30rem, calc(100% - 32px));
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2.5rem 2rem 2rem;
+  background: var(--bg);
+  color: var(--text);
+  text-align: center;
+  box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.4);
+}
+dialog::backdrop { background: rgb(31 30 29 / 0.45); backdrop-filter: blur(3px); }
+dialog[open] { animation: pop 0.35s cubic-bezier(.2,.8,.2,1); }
+@keyframes pop { from { opacity: 0; transform: scale(0.94) translateY(8px); } }
+
+dialog .medal { width: 9rem; height: 9rem; margin: 0 auto 1.2rem; }
+dialog .medal img { width: 7.5rem; height: 7.5rem; }
+dialog .medal::after { animation: shine 1.1s 0.2s ease forwards; }
+@keyframes shine { to { transform: translateX(60%); } }
+
+dialog h3 { font-size: 1.4em; font-weight: 600; line-height: 1.2; margin: 0 0 0.3em; }
+dialog .unlocked { font-size: 0.8em; color: var(--text-2); margin-bottom: 1.2em; }
+dialog p { font-size: 0.95em; text-align: left; }
+
+.close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  border: 0;
+  background: none;
+  color: var(--text-2);
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.close:hover { color: var(--text); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}

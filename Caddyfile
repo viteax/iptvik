@@ -1,0 +1,20 @@
+# TLS и домены – на edge, здесь только раздача статики по HTTP внутри сети edge.
+{
+	auto_https off
+	admin off
+}
+
+:80 {
+	root * /srv
+	encode zstd gzip
+	file_server
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+	header /assets/* Cache-Control "public, max-age=3600"
+	handle_errors {
+		respond "{err.status_code}" {err.status_code}
+	}
+}

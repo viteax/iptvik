@@ -1,0 +1,25 @@
+# Личная страница iptvik.ru (/opt/iptvik): статика из ./site за общим edge-caddy (/opt/edge).
+# Обновление – git pull, перезапуск не нужен: каталог смонтирован.
+
+name: iptvik
+
+services:
+  web:
+    image: caddy:2.11.7-alpine
+    restart: unless-stopped
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./site:/srv:ro
+    networks:
+      edge:
+        aliases: [iptvik-site]
+    mem_limit: 64m
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+
+networks:
+  edge:
+    external: true
