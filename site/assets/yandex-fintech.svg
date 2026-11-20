@@ -1,45 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
-  <!-- Значок «Стажер Яндекс Финтеха», 2024: голографическая «Я» -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="96" height="96" fill="none">
+  <!-- Значок «Стажер Яндекс Финтеха», 2024: логотип Яндекса на фоне монеты Финтеха -->
   <defs>
-    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e6e2ff"/>
-      <stop offset=".4" stop-color="#9f97de"/>
-      <stop offset=".7" stop-color="#8aa6dc"/>
-      <stop offset="1" stop-color="#f2b9d2"/>
+    <linearGradient id="bg" x1="0" y1=".2" x2="1" y2=".8">
+      <stop offset="0" stop-color="#8e93e6"/>
+      <stop offset=".5" stop-color="#9fb0f2"/>
+      <stop offset="1" stop-color="#b0c8f8"/>
     </linearGradient>
-    <linearGradient id="face" x1="0" y1=".75" x2="1" y2=".25">
-      <stop offset="0" stop-color="#a7b2f0"/>
-      <stop offset=".18" stop-color="#b4c4f4"/>
-      <stop offset=".3" stop-color="#ade9ea"/>
-      <stop offset=".42" stop-color="#cdbdf3"/>
-      <stop offset=".6" stop-color="#ece7f7"/>
-      <stop offset=".78" stop-color="#e3d8f6"/>
-      <stop offset=".92" stop-color="#f6c3d4"/>
-      <stop offset="1" stop-color="#f7aebf"/>
-    </linearGradient>
-    <linearGradient id="band" x1="0" y1="0" x2="1" y2="1">
-      <stop offset=".55" stop-color="#c9a8f0" stop-opacity="0"/>
-      <stop offset=".75" stop-color="#c9a8f0" stop-opacity=".55"/>
-      <stop offset=".9" stop-color="#a9e6ec" stop-opacity=".5"/>
-      <stop offset="1" stop-color="#a9e6ec" stop-opacity="0"/>
-    </linearGradient>
-    <filter id="lift" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy=".6" stdDeviation="1" flood-color="#6a5bb8" flood-opacity=".4"/>
-    </filter>
+    <radialGradient id="tint" cx=".22" cy=".25" r=".6">
+      <stop offset="0" stop-color="#c79ee8" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#c79ee8" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-
-  <circle cx="48" cy="48" r="46" fill="url(#rim)"/>
-  <circle cx="48" cy="48" r="39.5" fill="url(#face)"/>
-  <circle cx="48" cy="48" r="39.5" fill="url(#band)"/>
-  <circle cx="48" cy="48" r="39.5" fill="none" stroke="#7a6fc4" stroke-opacity=".3" stroke-width=".8"/>
-
-  <!-- Буква «Я» по логотипу Яндекс Финтеха: широкая ножка, круглая чаша -->
-  <path filter="url(#lift)" fill="#fff" fill-rule="evenodd"
-        stroke="#e7c9d6" stroke-width=".5"
-        d="M61.6 24.3 V71.2 H53.5 V56 H48.8 L41.7 71.2 H30.6 L38.9 54.4
-           C33.9 52 30.9 47.4 30.9 41 C30.9 30.6 37.6 24.3 47.6 24.3 Z
-           M53.5 31.1 H48.2 C44.1 31.1 41.7 34.9 41.7 41.4 C41.7 47.9 44.1 51.6 48.2 51.6 H53.5 Z"/>
-
-  <!-- Блик -->
-  <path d="M18 34 A33 33 0 0 1 58 13" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2.4" stroke-linecap="round"/>
+  <rect width="40" height="40" rx="20" fill="url(#bg)"/>
+  <rect width="40" height="40" rx="20" fill="url(#tint)"/>
+  <path fill="#fff" d="M22.776 31.5h4.178v-24h-6.078c-6.112 0-9.324 3.142-9.324 7.77 0 3.695 1.762 5.87 4.904 8.115L11 31.5h4.524l6.077-9.082-2.106-1.416c-2.555-1.726-3.799-3.073-3.799-5.974 0-2.555 1.796-4.282 5.215-4.282h1.864V31.5Z"/>
 </svg>
