@@ -1,7 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="96" height="96" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
   <!-- Значок «Стажер Яндекс Финтеха», 2024: логотип Яндекса на фоне монеты Финтеха -->
   <defs>
-    <linearGradient id="bg" x1="0" y1=".2" x2="1" y2=".8">
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d4dbff"/>
+      <stop offset=".5" stop-color="#5d68cf"/>
+      <stop offset="1" stop-color="#b3c6fa"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1=".2" x2="1" y2=".8">
       <stop offset="0" stop-color="#8e93e6"/>
       <stop offset=".5" stop-color="#9fb0f2"/>
       <stop offset="1" stop-color="#b0c8f8"/>
@@ -11,7 +16,15 @@
       <stop offset="1" stop-color="#c79ee8" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <rect width="40" height="40" rx="20" fill="url(#bg)"/>
-  <rect width="40" height="40" rx="20" fill="url(#tint)"/>
-  <path fill="#fff" d="M22.776 31.5h4.178v-24h-6.078c-6.112 0-9.324 3.142-9.324 7.77 0 3.695 1.762 5.87 4.904 8.115L11 31.5h4.524l6.077-9.082-2.106-1.416c-2.555-1.726-3.799-3.073-3.799-5.974 0-2.555 1.796-4.282 5.215-4.282h1.864V31.5Z"/>
+  <circle cx="48" cy="48" r="46" fill="url(#rim)"/>
+  <circle cx="48" cy="48" r="39.5" fill="url(#face)"/>
+  <circle cx="48" cy="48" r="39.5" fill="url(#tint)"/>
+  <circle cx="48" cy="48" r="39.5" fill="none" stroke="#4a54b8" stroke-opacity=".35" stroke-width="1"/>
+
+  <!-- Логотип Яндекса (40×40), вписанный в лицевую сторону -->
+  <path transform="translate(48 48) scale(1.8) translate(-20 -20)" fill="#fff"
+        d="M22.776 31.5h4.178v-24h-6.078c-6.112 0-9.324 3.142-9.324 7.77 0 3.695 1.762 5.87 4.904 8.115L11 31.5h4.524l6.077-9.082-2.106-1.416c-2.555-1.726-3.799-3.073-3.799-5.974 0-2.555 1.796-4.282 5.215-4.282h1.864V31.5Z"/>
+
+  <!-- Блик -->
+  <path d="M18 34 A33 33 0 0 1 58 13" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="2.4" stroke-linecap="round"/>
 </svg>
